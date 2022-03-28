@@ -2,11 +2,15 @@
   "name": "Desktop",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon src/**/*.js"
+    "start": "nodemon dist/index.js",
+    "build": "node build.js"
   },
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "nodemon": "^2.0.15"
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.28"
   }
 }
