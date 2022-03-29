@@ -16,8 +16,9 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 module.exports = __toCommonJS(src_exports);
 
-// src/20220328/8.js
-(function solution(arr) {
-  let answer = 0;
+// src/20220329(3)/3.js
+(function(input) {
+  let answer;
+  const splitArray = Array.from(input);
   return answer;
-})([20, 7, 23, 19, 10, 15, 25, 8, 13]);
+})("g0en2T0s8eSoft");
