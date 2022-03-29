@@ -5,6 +5,6 @@
       const date = e % 10;
       return date === carNumber;
    });
-   console.log(filteredNumber.length);
+   answer = filteredNumber.length;
    return answer;
 })([12, 20, 54, 30, 87, 91, 30]);
