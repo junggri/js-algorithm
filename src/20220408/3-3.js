@@ -1,3 +1,4 @@
+//강의 다시 보는 거 추천
 (function (input) {
    let answer = 0;
    const reg = new RegExp(/[a-zA-Z]/, "gi");

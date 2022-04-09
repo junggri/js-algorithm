@@ -1,15 +1,37 @@
-function addEachNumber(number) {
-   const value = Array.from(String(number)).reduce((pre, acc, i) => {
-      return Number(pre) + Number(acc);
-   }, 0);
-
-   return {value, number};
+function revert(number) {
+   const numberToString = Array.from(String(number)).reverse().join("");
+   return Number(numberToString);
 }
 
+
 (function (input) {
-   let answer;
-   let bigNumber;
-   let maxValue = Number.MIN_SAFE_INTEGER;
+   let answer = [];
+   for (let i = 0; i < input.length; i++) {
+      const number = revert(input[i]);
+      let divideNumber = 2;
+      let flag = true;
 
+      if (number === 1) {
+         continue;
+      }
 
-})([128, 460, 603, 40, 521, 137, 123]);
+      if (number === 2 || number === 3) {
+         answer.push(number);
+         continue;
+      }
+
+      for (let i = divideNumber; i < number; i++) {
+         if (number % divideNumber === 0) {
+            flag = false;
+            break;
+         }
+         divideNumber++;
+      }
+
+      if (!flag) {
+         continue;
+      }
+      answer.push(number);
+   }
+   console.log(answer);
+})([32, 55, 62, 20, 250, 370, 200, 30, 100]);

@@ -16,9 +16,9 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 module.exports = __toCommonJS(src_exports);
 
-// src/20220408/4-1.js
+// src/20220408/3-5.js
 (function(input) {
-  let answer;
-  let bigNumber;
-  let maxValue = Number.MIN_SAFE_INTEGER;
-})([128, 460, 603, 40, 521, 137, 123]);
+  let answer = "";
+  for (let i = 0; i < input.length - 1; i++) {
+  }
+})("KKHSSSSSSSE");
