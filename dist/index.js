@@ -16,9 +16,20 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 module.exports = __toCommonJS(src_exports);
 
-// src/20220408/3-5.js
+// src/20220410/4-5.js
 (function(input) {
-  let answer = "";
-  for (let i = 0; i < input.length - 1; i++) {
+  let answer;
+  let n = input.length;
+  let m = 3;
+  let tmp = /* @__PURE__ */ new Set();
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      for (let k2 = j + 1; k2 < n; k2++) {
+        tmp.add(input[i] + input[k2] + input[j]);
+      }
+    }
   }
-})("KKHSSSSSSSE");
+  let a = Array.from(tmp).sort((a2, b) => b - a2);
+  console.log(a);
+  answer = a[k - 1];
+})([13, 15, 34, 23, 45, 65, 33, 11, 26, 42]);
