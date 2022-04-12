@@ -16,29 +16,28 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 module.exports = __toCommonJS(src_exports);
 
-// src/20220412/5-8.js
-(function(input) {
-  let answer = 0;
-  let anagram = "abc";
-  for (let i = 0; i < input.length; i++) {
-    let n = anagram.length;
-    let hash = {};
-    for (let i2 = 0; i2 < n; i2++) {
-      if (!hash[anagram[i2]]) {
-        hash[anagram[i2]] = 0;
-      }
+// src/20220412/6-7.js
+function solution(a, b) {
+  let answer;
+  const stack = [];
+  for (let i = 0; i < b.length; i++) {
+    if (a.includes(b[i])) {
+      stack.push(b[i]);
     }
-    let cursor = i;
-    let cnt = 0;
-    while (n > 0 && input[cursor]) {
-      hash[input[cursor]]++;
-      cursor++;
-      n--;
-    }
-    const value = Math.min(...Object.values(hash));
-    if (value === 1) {
-      answer++;
+  }
+  const courseArray = Array.from(a);
+  const tmp = [...stack];
+  for (let i = 0; i < stack.length; i++) {
+    const a2 = courseArray.pop();
+    const b2 = tmp.pop();
+    console.log(a2, b2);
+    if (a2 === b2) {
+      answer = true;
+    } else {
+      answer = false;
+      break;
     }
   }
   console.log(answer);
-})("bacaAacba");
+}
+solution("BCA", "CBDAGE");
