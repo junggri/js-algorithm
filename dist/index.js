@@ -16,20 +16,29 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 module.exports = __toCommonJS(src_exports);
 
-// src/20220411/4-5.js
+// src/20220412/5-8.js
 (function(input) {
-  let answer = [];
-  let k = 3;
-  let n = input.length;
-  for (let i = 0; i < n; i++) {
-    for (let j = i + 1; j < n; j++) {
-      for (let s = j + 1; s < n; s++) {
-        const sum = input[i] + input[j] + input[s];
-        answer.push(sum);
+  let answer = 0;
+  let anagram = "abc";
+  for (let i = 0; i < input.length; i++) {
+    let n = anagram.length;
+    let hash = {};
+    for (let i2 = 0; i2 < n; i2++) {
+      if (!hash[anagram[i2]]) {
+        hash[anagram[i2]] = 0;
       }
     }
+    let cursor = i;
+    let cnt = 0;
+    while (n > 0 && input[cursor]) {
+      hash[input[cursor]]++;
+      cursor++;
+      n--;
+    }
+    const value = Math.min(...Object.values(hash));
+    if (value === 1) {
+      answer++;
+    }
   }
-  const set = Array.from(new Set(answer)).sort((a, b) => b - a);
-  answer = set[k - 1];
   console.log(answer);
-})([13, 15, 34, 23, 45, 65, 33, 11, 26, 42]);
+})("bacaAacba");
