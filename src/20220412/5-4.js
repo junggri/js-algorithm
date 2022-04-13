@@ -1,14 +1,28 @@
 (function (input) {
    let answer = 0;
+   let lt = 0, sum = 0;
+   // for (let i = 0; i < input.length; i++) {
+   //    let number = 5;
+   //    let cursor = i;
+   //
+   //    while (number - input[cursor] >= 0 && cursor <= input.length) {
+   //       number -= input[cursor];
+   //       cursor++;
+   //       answer++;
+   //    }
+   // }
 
-   for (let i = 0; i < input.length; i++) {
-      let number = 5;
-      let cursor = i;
+   for (let rt = 0; rt < input.length; rt++) {
+      sum += input[rt];
+      if (sum <= 5) {
+         answer += rt - lt + 1;
+      }
 
-      while (number - input[cursor] >= 0 && cursor <= input.length) {
-         number -= input[cursor];
-         cursor++;
-         answer++;
+      while (sum > 5) {
+         sum -= input[lt++];
+         if (sum <= 5) {
+            answer += rt - lt + 1;
+         }
       }
    }
    console.log(answer);

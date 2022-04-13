@@ -16,28 +16,11 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 module.exports = __toCommonJS(src_exports);
 
-// src/20220412/6-7.js
+// src/20220413/5/8.js
 function solution(a, b) {
   let answer;
-  const stack = [];
-  for (let i = 0; i < b.length; i++) {
-    if (a.includes(b[i])) {
-      stack.push(b[i]);
-    }
+  const hash = /* @__PURE__ */ new Map();
+  for (let i = 0; i < a.length; i++) {
   }
-  const courseArray = Array.from(a);
-  const tmp = [...stack];
-  for (let i = 0; i < stack.length; i++) {
-    const a2 = courseArray.pop();
-    const b2 = tmp.pop();
-    console.log(a2, b2);
-    if (a2 === b2) {
-      answer = true;
-    } else {
-      answer = false;
-      break;
-    }
-  }
-  console.log(answer);
 }
-solution("BCA", "CBDAGE");
+solution("bacaAacba", "abc");
