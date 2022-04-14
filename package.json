@@ -2,7 +2,7 @@
   "name": "Desktop",
   "version": "1.0.0",
   "scripts": {
-    "start": "nodemon dist/index.js",
+    "start": "yarn build & nodemon dist/index.js",
     "build": "node build.js"
   },
   "main": "index.js",
