@@ -16,17 +16,21 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 module.exports = __toCommonJS(src_exports);
 
-// src/20220414/re/7.js
-function solution(course, word) {
-  let answer = "YES";
-  const stack = Array.from(course);
-  for (let x of word) {
-    if (stack.includes(x)) {
-      console.log(x, stack);
-      stack.shift();
-      console.log(stack);
+// src/20220415/4.js
+function solution(input) {
+  const answer = [];
+  for (let i = 0; i < input.length; i++) {
+    const tmp = input[i];
+    let j;
+    for (j = i - 1; i >= 0; j--) {
+      if (input[j] > tmp) {
+        input[j + 1] = input[j];
+      } else {
+        break;
+      }
     }
+    input[j + 1] = tmp;
   }
-  console.log(stack);
+  console.log(input);
 }
-solution("CBA", "CADBGE");
+solution([11, 7, 5, 6, 10, 9]);
