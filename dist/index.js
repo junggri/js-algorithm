@@ -16,21 +16,26 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 module.exports = __toCommonJS(src_exports);
 
-// src/20220415/4.js
+// src/20220418/7.js
 function solution(input) {
-  const answer = [];
   for (let i = 0; i < input.length; i++) {
     const tmp = input[i];
     let j;
-    for (j = i - 1; i >= 0; j--) {
-      if (input[j] > tmp) {
-        input[j + 1] = input[j];
-        console.log(input);
+    for (j = i; j > 0; j--) {
+      if (input[j][0] < input[j - 1][0]) {
+        input[j] = input[j - 1];
+        input[j - 1] = tmp;
+        if (input[j][0] === input[j - 1][0] && input[j][1] < tmp[1]) {
+          [input[j], input[j - 1]] = [input[j - 1], input[j]];
+        }
       } else {
         break;
       }
     }
-    input[j + 1] = tmp;
+  }
+  console.log(input);
+  for (let i = 0; i < input.length; i++) {
+    const tmp = input[i];
   }
 }
-solution([3, 2, 1]);
+solution([[2, 7], [1, 3], [1, 2], [1, 1], [3, 6]]);

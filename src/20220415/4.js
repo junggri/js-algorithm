@@ -21,7 +21,6 @@ function solution(input) {
       for (j = i - 1; i >= 0; j--) {
          if (input[j] > tmp) {
             input[j + 1] = input[j];
-            console.log(input);
          } else {
             break;
          }
