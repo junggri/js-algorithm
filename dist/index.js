@@ -16,26 +16,24 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 module.exports = __toCommonJS(src_exports);
 
-// src/20220418/7.js
+// src/20220421/10.js
 function solution(input) {
-  for (let i = 0; i < input.length; i++) {
-    const tmp = input[i];
-    let j;
-    for (j = i; j > 0; j--) {
-      if (input[j][0] < input[j - 1][0]) {
-        input[j] = input[j - 1];
-        input[j - 1] = tmp;
-        if (input[j][0] === input[j - 1][0] && input[j][1] < tmp[1]) {
-          [input[j], input[j - 1]] = [input[j - 1], input[j]];
-        }
-      } else {
-        break;
-      }
+  let answer = 0;
+  input.sort((a, b) => a - b);
+  let lp = 0;
+  let rp = input.length;
+  while (lp < rp) {
+    let cursor = Math.floor((rp - lp) / 2);
+    console.log(input[cursor]);
+    answer++;
+    if (input[cursor] > 32)
+      rp = cursor;
+    if (input[cursor] < 32)
+      lp = cursor;
+    if (input[cursor] === 32) {
+      break;
     }
   }
-  console.log(input);
-  for (let i = 0; i < input.length; i++) {
-    const tmp = input[i];
-  }
+  console.log(answer);
 }
-solution([[2, 7], [1, 3], [1, 2], [1, 1], [3, 6]]);
+solution([23, 87, 65, 12, 57, 31, 32, 99, 81]);
