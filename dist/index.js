@@ -16,23 +16,17 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 var src_exports = {};
 module.exports = __toCommonJS(src_exports);
 
-// src/20220421/10.js
+// src/20220425/3.js
 function solution(input) {
-  let answer = 0;
-  input.sort((a, b) => a - b);
-  let lt = 0;
-  let rt = input.length - 1;
-  while (lt <= rt) {
-    let mid = Math.floor((lt + rt) / 2);
-    if (input[mid] === 32) {
-      answer = mid + 1;
-      break;
-    } else if (input[mid] > 32) {
-      rt = mid - 1;
-    } else {
-      lt = mid + 1;
-    }
+  const answer = [];
+  let init = 1;
+  function recursive(init2) {
+    console.log(init2);
+    if (init2 * 2 > 7)
+      return;
+    recursive(init2 * 2);
+    recursive(init2 * 2 + 1);
   }
-  console.log(answer);
+  recursive(init);
 }
-solution([23, 87, 65, 12, 57, 32, 99, 81]);
+solution();
